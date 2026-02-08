@@ -1,0 +1,10 @@
+.Container
+{
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image:url(map.jpghttps://www.vecteezy.com/vector-art/20833849-world-map-with-country-names);
+}
