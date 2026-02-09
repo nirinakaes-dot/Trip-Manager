@@ -13,16 +13,10 @@ function AddTrip()
     const country = document.getElementById("Countrys").value;
     const Landmark = document.getElementById("Landmarks").value;
     const season = document.getElementById("Seasons").value;
-    const description = document.getElementById("Description").value; }
+    const description = document.getElementById("Description").value; 
 
     // Create a new trip object
     const newTrip = new Trip(country, Landmark, season, description);
-
-    // Attach the new trip to the AddTrip function for access outside
-    AddTrip.newTrip = newTrip;
-    //array to store trips
-    const tripLog= AddTrip.newTrip;
-    
 
 
     // Clear input fields after adding the trip
@@ -31,12 +25,27 @@ function AddTrip()
     document.getElementById("Seasons").value = "";
     document.getElementById("Description").value = "";
 
-    //delete trip
+    // Add the new trip to the log 
+    tripLog.push(newTrip);
+    console.log("Trip added successfully!");
+ 
+}
+ 
+ //array to store trips
+    const tripLog= [];
+    displayTrips();
+    
+  // Add event listener to the "Add Trip" button
+  document.getElementById("Add").addEventListener("click", AddTrip)
 
-
-
-
-    // Add the new trip to the log (you can implement this as needed, e.g., by storing it in an array or displaying it on the page)
-    console.log(AddTrip); // For demonstration, log the new trip to the console
-    console.log("Trip added successfully!"); // Confirmation message
-
+  // Function to display all trips in the log
+  function displayTrips() {
+    const logs = document.getElementById("logs");
+    logs.innerHTML = ""; 
+    tripLog.forEach((trip, index) => {
+        const tripEntry= document.createElement("div");
+        
+        tripEntry.textContent = `Trip ${index + 1}: Country: ${trip.country}, Landmark: ${trip.landmark}, Season: ${trip.season}, Description: ${trip.description}`;
+       logs.appendChild(tripEntry);
+    });
+    }
