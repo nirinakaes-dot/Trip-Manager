@@ -47,6 +47,23 @@ background-color: rgb(241, 237, 236);}
 font-weight: 100;
 font-style: italic;}
 
+#logs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(241, 237, 236);
+
+    #logs div {
+    background-color: #f0f8ff;   /* light blue background */
+    border: 1px solid #ccc;       /* subtle border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;           /* rounded corners */
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1); /* soft shadow */
+    transition: all 0.3s ease;    /* smooth toggle */
+    font-size: 1em;
+    color: #333;}
 
 
 

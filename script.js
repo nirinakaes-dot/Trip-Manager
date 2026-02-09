@@ -28,12 +28,15 @@ function AddTrip()
     // Add the new trip to the log 
     tripLog.push(newTrip);
     console.log("Trip added successfully!");
+
+    displayTrips();
+
  
 }
  
  //array to store trips
     const tripLog= [];
-    displayTrips();
+
     
   // Add event listener to the "Add Trip" button
   document.getElementById("Add").addEventListener("click", AddTrip)
@@ -41,11 +44,28 @@ function AddTrip()
   // Function to display all trips in the log
   function displayTrips() {
     const logs = document.getElementById("logs");
-    logs.innerHTML = ""; 
-    tripLog.forEach((trip, index) => {
-        const tripEntry= document.createElement("div");
-        
-        tripEntry.textContent = `Trip ${index + 1}: Country: ${trip.country}, Landmark: ${trip.landmark}, Season: ${trip.season}, Description: ${trip.description}`;
-       logs.appendChild(tripEntry);
-    });
-    }
+    logs.innerHTML = "";
+    tripLog.forEach(trip => {
+//link to display the trip details
+    const nameTrip= document.createElement("h2");
+    nameTrip.textContent= trip.country;
+    nameTrip.style.cursor= "pointer";
+
+    //
+    const tripDetails= document.createElement("div");
+    tripDetails.style.display= "none";
+    tripDetails.textContent= `Country: ${trip.country}, Landmark: ${trip.landmark}, Season: ${trip.season}, Description: ${trip.description}`;
+
+    //
+    nameTrip.addEventListener("click", function() {
+        if (tripDetails.style.display === "none") {
+            tripDetails.style.display = "block";
+        } else {
+            tripDetails.style.display = "none";
+        }
+        });
+
+    logs.appendChild(nameTrip);
+    logs.appendChild(tripDetails);
+  }
+    )}
