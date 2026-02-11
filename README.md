@@ -27,8 +27,18 @@ HTML
 
 CSS
 
-Javascript
-
 JavaScript
 
-Jest (for testing)
+
+## Contact Information
+For any inquiries or contribution to this project:<br>
+Email: Nirinakaes@gmail.com <br>
+GitHub: https://github.com/nirinakaes-dot
+
+
+ ## License and  Copyright information
+
+This project is open-source and available under the MIT License.<br>
+
+
+
